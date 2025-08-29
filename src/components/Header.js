@@ -10,10 +10,30 @@ export default function Header() {
         <div className="text-2xl font-bold">Pizzaria Olivetto</div>
 
         <nav className="space-x-6 hidden md:flex">
-          <Link href="#galeria">Galeria</Link>
-          <Link href="#menu">Menu</Link>
-          <Link href="#bebidas">Bebidas</Link>
-          <Link href="#contato">Contato</Link>
+          <Link
+            href="#galeria"
+            className="text-black hover:scale-105 transition-transform duration-300"
+          >
+            Galeria
+          </Link>
+          <Link
+            href="#menu"
+            className="text-black hover:scale-105 transition-transform duration-300"
+          >
+            Menu
+          </Link>
+          <Link
+            href="#bebidas"
+            className="text-black hover:scale-105 transition-transform duration-300"
+          >
+            Bebidas
+          </Link>
+          <Link
+            href="#contato"
+            className="text-black hover:scale-105 transition-transform duration-300"
+          >
+            Contato
+          </Link>
         </nav>
 
         <div className="flex space-x-4 text-2xl">
@@ -40,3 +60,4 @@ export default function Header() {
     </header>
   );
 }
+
