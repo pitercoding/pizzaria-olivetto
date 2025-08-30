@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Welcome() {
   return (
     <section className="max-w-7xl mx-auto py-20 px-4 grid md:grid-cols-2 gap-10 items-center">
@@ -7,8 +9,13 @@ export default function Welcome() {
           Aqui você encontra pratos italianos preparados com ingredientes frescos e muito amor. Venha saborear nossas especialidades!
         </p>
       </div>
-      <div>
-        <img src="/prato.jpg" alt="Prato delicioso" className="rounded-xl shadow-md" />
+      <div className="relative w-full h-80"> 
+        <Image
+          src="/prato.jpg"
+          alt="Prato delicioso"
+          fill                // faz ocupar toda a div pai
+          className="rounded-xl shadow-md object-cover"
+        />
       </div>
     </section>
   );
