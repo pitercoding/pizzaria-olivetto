@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Importar fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,7 +11,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Source Sans Pro', sans-serif;
+  --font-serif: 'Cardo', serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -19,8 +23,9 @@
   }
 }
 
+/* Definir fontes padrão do body */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif; /* corpo do texto */
 }

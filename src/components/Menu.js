@@ -19,10 +19,13 @@ export default function Menu() {
       <div className="absolute inset-0 bg-black/40 -z-10"></div>
 
       {/* Conteúdo */}
+      {/* Título com Cardo */}
       <h2 className="text-5xl font-serif font-bold mb-6 z-10 relative">
         Menu
       </h2>
-      <button className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 z-10 relative">
+
+      {/* Botão com Source Sans Pro */}
+      <button className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 z-10 relative font-sans">
         Acesse agora
       </button>
     </section>
