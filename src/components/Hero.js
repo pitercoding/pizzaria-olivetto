@@ -31,7 +31,7 @@ export default function Hero() {
         </button>
 
         <p className="mt-4 text-xs md:text-base text-white/90">
-          Processamos os pedidos de reserva o mais rápido possível – sua reserva se torna vinculativa assim que você receber nossa confirmação.
+          Processamos os pedidos de reserva o mais rápido possível – sua reserva é ativada assim que você receber nossa confirmação.
         </p>
       </div>
     </section>
