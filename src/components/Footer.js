@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10">
         <div>
           <h3 className="font-bold mb-2">Pizzaria Olivetto</h3>
-          <p>Endereço, cidade, estado</p>
+          <p>Av. Pres. Vargas, 590, Rio de Janeirio, Brasil</p>
         </div>
 
         <div>
