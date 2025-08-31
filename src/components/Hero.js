@@ -19,13 +19,13 @@ export default function Hero() {
       {/* Conteúdo do Hero */}
       <div className="relative z-10 max-w-3xl px-4">
         {/* Título com Cardo */}
-        <h1 className="text-5xl md:text-6xl font-serif font-bold mb-4">
+        <h1 className="text-[60px] md:text-6xl font-serif font-bold mb-4">
           PIZZERIA OLIVETTO
         </h1>
 
         {/* Subtítulo com Source Sans Pro */}
-        <h3 className="text-lg md:text-2xl mb-6 font-sans font-medium">
-          O melhor da culinária italiana, com pratos preparados com amor
+        <h3 className="text-[35px] md:text-2xl mb-6 font-sans font-medium">
+          Um pedaço da Itália no centro do Rio de Janeiro
         </h3>
 
         {/* Botão transparente */}
