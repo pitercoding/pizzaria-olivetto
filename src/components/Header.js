@@ -8,7 +8,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuLinks = [
-    { href: "#inicio", label: "Início" },
+    { href: "/", label: "Início" },
     { href: "#galeria", label: "Galeria" },
     { href: "#menu", label: "Menu" },
     { href: "#bebidas", label: "Bebidas" },
@@ -18,11 +18,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
-        {/* Nome do restaurante com Cardo */}
-        <div className="text-2xl font-bold font-serif">Pizzaria Olivetto</div>
+        {/* Nome do restaurante */}
+        <div className="text-2xl font-bold font-serif-footer">
+          Pizzaria Olivetto
+        </div>
 
-        {/* Menu desktop com Source Sans Pro */}
-        <nav className="space-x-6 hidden md:flex font-sans">
+        {/* Menu desktop */}
+        <nav className="space-x-6 hidden md:flex font-sans-footer">
           {menuLinks.map((link) => (
             <Link
               key={link.href}
@@ -81,9 +83,9 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Menu mobile com Source Sans Pro */}
+      {/* Menu mobile */}
       {isOpen && (
-        <nav className="flex flex-col space-y-2 p-4 bg-white md:hidden overflow-hidden font-sans">
+        <nav className="flex flex-col space-y-2 p-4 bg-white md:hidden overflow-hidden font-sans-footer">
           {menuLinks.map((link) => (
             <Link
               key={link.href}

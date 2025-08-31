@@ -18,12 +18,12 @@ export default function Hero() {
 
       {/* Conteúdo do Hero */}
       <div className="relative z-10 max-w-3xl px-4">
-        {/* Título com Cardo */}
+        {/* Título */}
         <h1 className="text-[60px] md:text-6xl font-serif font-bold mb-4">
           PIZZERIA OLIVETTO
         </h1>
 
-        {/* Subtítulo com Source Sans Pro */}
+        {/* Subtítulo */}
         <h3 className="text-[35px] md:text-2xl mb-6 font-sans font-medium">
           Um pedaço da Itália no centro do Rio de Janeiro
         </h3>
@@ -33,7 +33,7 @@ export default function Hero() {
           Reserve uma mesa
         </button>
 
-        {/* Parágrafo explicativo com Source Sans Pro */}
+        {/* Parágrafo explicativo */}
         <p className="mt-4 text-xs md:text-base text-white/90 font-sans">
           Processamos os pedidos de reserva o mais rápido possível – sua reserva é ativada assim que você receber nossa confirmação.
         </p>
