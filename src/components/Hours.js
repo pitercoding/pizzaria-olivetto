@@ -1,35 +1,35 @@
 export default function Hours() {
   return (
-    <section className="max-w-7xl mx-auto py-20 px-6 grid md:grid-cols-2 items-center gap-12">
+    <section className="max-w-7xl mx-auto py-20 px-6 grid md:grid-cols-2 items-start gap-12">
       {/* Coluna esquerda - Texto */}
-      <div className="text-center md:text-left">
-        <h2 className="text-4xl font-serif font-bold mb-10">
+      <div>
+        <h2 className="text-4xl font-serif font-bold mb-10 text-center md:text-left">
           Horário de funcionamento
         </h2>
 
-        <ul className="text-lg text-gray-800 space-y-3 font-sans">
-          <li className="flex justify-between md:justify-start md:gap-6">
-            <span>Segunda:</span>
-            <span>Fechado</span>
-          </li>
-          <li className="flex justify-between md:justify-start md:gap-6">
-            <span>Ter - Qui:</span>
-            <span>17:00 - 23:00</span>
-          </li>
-          <li className="flex justify-between md:justify-start md:gap-6">
-            <span>Sex - Sáb:</span>
-            <span>17:00 - 00:00</span>
-          </li>
-          <li className="flex justify-between md:justify-start md:gap-6">
-            <span>Domingo:</span>
-            <span>12:00 - 23:00</span>
-          </li>
-        </ul>
+        <dl className="space-y-4 text-lg text-gray-800 font-sans">
+          <div className="flex justify-between md:justify-start md:gap-8">
+            <dt className="font-medium">Segunda:</dt>
+            <dd className="text-gray-600">Fechado</dd>
+          </div>
+          <div className="flex justify-between md:justify-start md:gap-8">
+            <dt className="font-medium">Ter - Qui:</dt>
+            <dd className="text-gray-600">17:00 – 23:00</dd>
+          </div>
+          <div className="flex justify-between md:justify-start md:gap-8">
+            <dt className="font-medium">Sex - Sáb:</dt>
+            <dd className="text-gray-600">17:00 – 00:00</dd>
+          </div>
+          <div className="flex justify-between md:justify-start md:gap-8">
+            <dt className="font-medium">Domingo:</dt>
+            <dd className="text-gray-600">12:00 – 23:00</dd>
+          </div>
+        </dl>
 
         <p className="mt-8 text-gray-700 text-base md:text-lg leading-relaxed">
-          Cozinha funciona até às 22:00
+          A cozinha funciona até às 22:00.
           <br />
-          Domingo 12-16:00 Almoço
+          Domingo 12:00-16:00: Almoço
         </p>
       </div>
 
