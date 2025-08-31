@@ -7,18 +7,18 @@ export default function Footer() {
     <footer className="bg-gray-800 text-white py-10">
       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-10">
         <div>
-          {/* Título com Cardo */}
-          <h3 className="text-[18px] font-serif font-bold mb-2">
+          {/* Nome da Pizzaria */}
+          <h3 className="text-[18px] font-sans font-bold mb-2">
             Pizzaria Olivetto
           </h3>
-          {/* Parágrafo com Source Sans Pro */}
+          {/* Endereço */}
           <p className="text-[14px] font-sans">
             Av. Pres. Vargas, 590, Rio de Janeiro, Brasil
           </p>
         </div>
 
         <div>
-          <h3 className="text-[18px] font-serif font-bold mb-2">
+          <h3 className="text-[18px] font-sans font-bold mb-2">
             Links Rápidos
           </h3>
           <ul className="text-[14px] space-y-1 font-sans">
@@ -35,10 +35,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-[18px] font-serif font-bold mb-2">
+          <h3 className="text-[18px] font-sans font-bold mb-2">
             Redes Sociais
           </h3>
-          <div className="flex space-x-4 text-2xl font-sans">
+          <div className="flex space-x-4 text-2xl font-sans-footer">
             <a
               href="https://www.instagram.com/"
               target="_blank"
