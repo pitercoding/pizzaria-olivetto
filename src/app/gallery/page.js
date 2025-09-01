@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-// Cada imagem tem thumb (para grid), full (para modal) e alt (acessibilidade)
+// Thumb (para grid), full (para modal) e alt (acessibilidade)
 const images = [
   {
     thumb: "/gallery/galeria1-thumb.webp",
@@ -20,22 +20,22 @@ const images = [
   {
     thumb: "/gallery/galeria3-thumb.webp",
     full: "/gallery/galeria3-large.webp",
-    alt: "Área externa 1",
+    alt: "Mesa 1",
   },
   {
     thumb: "/gallery/galeria4-thumb.webp",
     full: "/gallery/galeria4-large.webp",
-    alt: "Área externa 2",
+    alt: "Mesa 2",
   },
   {
     thumb: "/gallery/galeria5-thumb.webp",
     full: "/gallery/galeria5-large.webp",
-    alt: "Detalhe decorativo 1",
+    alt: "Prato 1",
   },
   {
     thumb: "/gallery/galeria6-thumb.webp",
     full: "/gallery/galeria6-large.webp",
-    alt: "Detalhe decorativo 2",
+    alt: "Forno",
   },
   {
     thumb: "/gallery/galeria7-thumb.webp",
@@ -50,12 +50,12 @@ const images = [
   {
     thumb: "/gallery/galeria9-thumb.webp",
     full: "/gallery/galeria9-large.webp",
-    alt: "Equipe de atendimento",
+    alt: "Forno a lenha",
   },
   {
     thumb: "/gallery/galeria10-thumb.webp",
     full: "/gallery/galeria10-large.webp",
-    alt: "Vista do restaurante",
+    alt: "Pizza vegetariana",
   },
 ];
 
@@ -65,24 +65,19 @@ export default function GaleriaPage() {
   const openImage = (index) => setCurrentIndex(index);
   const closeImage = () => setCurrentIndex(null);
 
-  const showPrev = () => {
+  const showPrev = () =>
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
-  };
-
-  const showNext = () => {
+  const showNext = () =>
     setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
-  };
 
   // Atalhos de teclado
   useEffect(() => {
     if (currentIndex === null) return;
-
     const handleKeyDown = (e) => {
       if (e.key === "Escape") closeImage();
       if (e.key === "ArrowLeft") showPrev();
       if (e.key === "ArrowRight") showNext();
     };
-
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentIndex]);
@@ -92,9 +87,22 @@ export default function GaleriaPage() {
       <Header />
 
       <main className="pt-20 max-w-7xl mx-auto px-4 py-10">
-        <h1 className="text-4xl font-serif font-bold text-center mb-10">
-          Nossa Galeria
-        </h1>
+        {/* Banner com imagem de fundo */}
+        <div className="relative w-full h-64 md:h-80 lg:h-96 mb-10 flex items-center justify-center">
+          <Image
+            src={images[0].full} // primeira imagem como background
+            alt={images[0].alt}
+            fill
+            className="object-cover object-center rounded-lg"
+            priority
+          />
+          {/* Overlay escuro transparente */}
+          <div className="absolute inset-0 bg-black/30 rounded-lg flex items-center justify-center">
+            <h1 className="text-5xl md:text-7xl font-serif font-bold text-white text-center px-4">
+              Galeria
+            </h1>
+          </div>
+        </div>
 
         {/* Grid responsivo */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
