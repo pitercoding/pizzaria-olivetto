@@ -9,10 +9,10 @@ export default function Header() {
 
   const menuLinks = [
     { href: "/", label: "Início" },
-    { href: "#galeria", label: "Galeria" },
+    { href: "/gallery", label: "Galeria" },
     { href: "#menu", label: "Menu" },
     { href: "#bebidas", label: "Bebidas" },
-    { href: "#contato", label: "Contato" },
+    { href: "/contact", label: "Contato" },
   ];
 
   return (
