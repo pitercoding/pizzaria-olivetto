@@ -12,7 +12,7 @@ export default function Header() {
     { href: "/gallery", label: "Galeria" },
     { href: "#menu", label: "Menu" },
     { href: "#bebidas", label: "Bebidas" },
-    { href: "#contato", label: "Contato" },
+    { href: "/contact", label: "Contato" },
   ];
 
   return (
