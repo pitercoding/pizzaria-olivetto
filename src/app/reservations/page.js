@@ -3,8 +3,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ReservationsPage() {
+  // ID do formulário no Formspree
+  const [state, handleSubmit] = useForm("xanddlzl");
+
   return (
     <>
       <Header />
@@ -31,7 +35,10 @@ export default function ReservationsPage() {
           Preencha o Formulário
         </h2>
 
-        <form className="space-y-6 bg-white border-1 p-8 rounded-lg shadow-lg">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 bg-white border-1 p-8 rounded-lg shadow-lg"
+        >
           {/* Nome */}
           <div>
             <label className="block text-left font-medium mb-2" htmlFor="name">
@@ -40,9 +47,11 @@ export default function ReservationsPage() {
             <input
               type="text"
               id="name"
+              name="name"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             />
+            <ValidationError prefix="Nome" field="name" errors={state.errors} />
           </div>
 
           {/* E-mail */}
@@ -53,24 +62,33 @@ export default function ReservationsPage() {
             <input
               type="email"
               id="email"
+              name="email"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+            />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
             />
           </div>
 
           {/* Telefone */}
           <div>
-            <label
-              className="block text-left font-medium mb-2"
-              htmlFor="phone"
-            >
+            <label className="block text-left font-medium mb-2" htmlFor="phone">
               Telefone
             </label>
             <input
               type="tel"
               id="phone"
+              name="phone"
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+            />
+            <ValidationError
+              prefix="Telefone"
+              field="phone"
+              errors={state.errors}
             />
           </div>
 
@@ -81,11 +99,12 @@ export default function ReservationsPage() {
                 className="block text-left font-medium mb-2"
                 htmlFor="date"
               >
-                Data
+                Data da Reserva
               </label>
               <input
                 type="date"
                 id="date"
+                name="date"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
               />
@@ -95,11 +114,12 @@ export default function ReservationsPage() {
                 className="block text-left font-medium mb-2"
                 htmlFor="time"
               >
-                Hora
+                Hora da Reserva
               </label>
               <input
                 type="time"
                 id="time"
+                name="time"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
               />
@@ -117,6 +137,7 @@ export default function ReservationsPage() {
             <input
               type="number"
               id="guests"
+              name="guests"
               min="1"
               max="20"
               required
@@ -134,6 +155,7 @@ export default function ReservationsPage() {
             </label>
             <textarea
               id="message"
+              name="message"
               rows="4"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             ></textarea>
@@ -143,11 +165,24 @@ export default function ReservationsPage() {
           <div className="text-center">
             <button
               type="submit"
+              disabled={state.submitting}
               className="bg-red-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-red-700 transition"
             >
-              Reservar agora
+              {state.submitting ? "Enviando..." : "Reservar agora"}
             </button>
           </div>
+
+          {/* Mensagens de sucesso/erro */}
+          {state.succeeded && (
+            <p className="text-green-600 mt-4 text-center">
+              Reserva enviada com sucesso! Aguarde nossa confirmação por E-mail dentro de até 5 horas.
+            </p>
+          )}
+          {state.errors?.length > 0 && (
+            <p className="text-red-600 mt-4 text-center">
+              Ocorreu um erro. Por favor, tente novamente.
+            </p>
+          )}
         </form>
       </main>
 
