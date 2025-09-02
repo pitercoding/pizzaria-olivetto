@@ -47,8 +47,8 @@ export default function GaleriaPage() {
       {/* Banner full-width */}
       <div className="relative w-full h-64 md:h-80 lg:h-96 mb-10 flex items-center justify-center">
         <Image
-          src={images[0].full}
-          alt={images[0].alt}
+          src="/gallery/banner-galeria.webp"
+          alt="banner-galeria"
           fill
           className="object-cover object-center rounded-lg"
           priority
