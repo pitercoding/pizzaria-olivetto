@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative w-full h-[80vh] md:h-[90vh] flex items-center justify-center text-center text-white pt-16">
-      
       {/* Imagem de fundo */}
       <Image
         src="/hero.jpg"
@@ -28,10 +28,13 @@ export default function Hero() {
           Um pedaço da Itália no centro do Rio de Janeiro
         </h3>
 
-        {/* Botão transparente */}
-        <button className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 font-sans">
+        {/* Botão transparente que leva para /reservations */}
+        <Link
+          href="/reservations"
+          className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 font-sans inline-block"
+        >
           Reserve uma mesa
-        </button>
+        </Link>
 
         {/* Parágrafo explicativo */}
         <p className="mt-4 text-xs md:text-base text-white/90 font-sans">
