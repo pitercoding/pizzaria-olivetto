@@ -8,20 +8,20 @@ export default function Hours() {
         </h2>
 
         <dl className="space-y-4 text-lg text-gray-800 font-sans">
-          <div className="flex justify-between md:justify-start md:gap-8">
-            <dt className="font-medium">Segunda:</dt>
+          <div className="flex">
+            <dt className="font-medium w-24 md:w-32">Segunda:</dt>
             <dd className="text-gray-600">Fechado</dd>
           </div>
-          <div className="flex justify-between md:justify-start md:gap-8">
-            <dt className="font-medium">Ter - Qui:</dt>
+          <div className="flex">
+            <dt className="font-medium w-24 md:w-32">Ter - Qui:</dt>
             <dd className="text-gray-600">17:00 – 23:00</dd>
           </div>
-          <div className="flex justify-between md:justify-start md:gap-8">
-            <dt className="font-medium">Sex - Sáb:</dt>
+          <div className="flex">
+            <dt className="font-medium w-24 md:w-32">Sex - Sáb:</dt>
             <dd className="text-gray-600">17:00 – 00:00</dd>
           </div>
-          <div className="flex justify-between md:justify-start md:gap-8">
-            <dt className="font-medium">Domingo:</dt>
+          <div className="flex">
+            <dt className="font-medium w-24 md:w-32">Domingo:</dt>
             <dd className="text-gray-600">12:00 – 23:00</dd>
           </div>
         </dl>
