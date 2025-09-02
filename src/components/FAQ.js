@@ -9,8 +9,8 @@ const faqs = [
       "Você pode reservar clicando no botão 'Reserve uma mesa' no topo do nosso site.",
   },
   {
-    question: "Há pratos vegetarianos?",
-    answer: "Sim, temos várias opções vegetarianas deliciosas.",
+    question: "Há pratos vegenos?",
+    answer: "Sim, temos várias opções vegenas deliciosas.",
   },
   {
     question: "Há lugares para sentar ao ar livre?",
