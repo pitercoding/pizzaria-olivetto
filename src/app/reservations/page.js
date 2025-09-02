@@ -9,11 +9,17 @@ export default function ReservationsPage() {
   // ID do formulário no Formspree
   const [state, handleSubmit] = useForm("xanddlzl");
 
+  // Datas mínimas e máximas
+  const today = new Date().toISOString().split("T")[0]; // Data de hoje
+  const twoMonthsLater = new Date();
+  twoMonthsLater.setMonth(twoMonthsLater.getMonth() + 2);
+  const maxDate = twoMonthsLater.toISOString().split("T")[0];
+
   return (
     <>
       <Header />
 
-      {/* Banner com overlay e título */}
+      {/* Banner */}
       <div className="relative w-full h-64 md:h-80 lg:h-96 mb-10 flex items-center justify-center">
         <Image
           src="/gallery/reservations-banner.webp"
@@ -35,13 +41,17 @@ export default function ReservationsPage() {
           Preencha o Formulário
         </h2>
 
+        <p className="mt-2 text-sm md:text-base text-gray-600 font-sans text-center leading-relaxed pb-3">
+          Processamos os pedidos de reserva dentro de poucas horas – sua reserva é ativada assim que você receber nossa confirmação por e-mail.
+        </p>
+
         <form
           onSubmit={handleSubmit}
           className="space-y-6 bg-white border-1 p-8 rounded-lg shadow-lg"
         >
           {/* Nome */}
           <div>
-            <label className="block text-left font-medium mb-2" htmlFor="name">
+            <label htmlFor="name" className="block text-left font-medium mb-2">
               Nome
             </label>
             <input
@@ -49,6 +59,9 @@ export default function ReservationsPage() {
               id="name"
               name="name"
               required
+              pattern="[A-Za-zÀ-ÿ\s]+"
+              title="Digite apenas letras"
+              placeholder="Ex: João Silva"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             />
             <ValidationError prefix="Nome" field="name" errors={state.errors} />
@@ -56,7 +69,7 @@ export default function ReservationsPage() {
 
           {/* E-mail */}
           <div>
-            <label className="block text-left font-medium mb-2" htmlFor="email">
+            <label htmlFor="email" className="block text-left font-medium mb-2">
               E-mail
             </label>
             <input
@@ -64,6 +77,9 @@ export default function ReservationsPage() {
               id="email"
               name="email"
               required
+              pattern=".+@(gmail\.com|outlook\.com|yahoo\.com|hotmail\.com)$"
+              title="Use um email válido: gmail.com, outlook.com, hotmail.com ou yahoo.com"
+              placeholder="exemplo@gmail.com"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             />
             <ValidationError
@@ -75,7 +91,7 @@ export default function ReservationsPage() {
 
           {/* Telefone */}
           <div>
-            <label className="block text-left font-medium mb-2" htmlFor="phone">
+            <label htmlFor="phone" className="block text-left font-medium mb-2">
               Telefone
             </label>
             <input
@@ -83,6 +99,9 @@ export default function ReservationsPage() {
               id="phone"
               name="phone"
               required
+              pattern="\([1-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}"
+              title="Digite no formato (XX) XXXXX-XXXX"
+              placeholder="(XX) XXXXX-XXXX"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             />
             <ValidationError
@@ -94,10 +113,11 @@ export default function ReservationsPage() {
 
           {/* Data e Hora */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Data */}
             <div>
               <label
-                className="block text-left font-medium mb-2"
                 htmlFor="date"
+                className="block text-left font-medium mb-2"
               >
                 Data da Reserva
               </label>
@@ -106,13 +126,17 @@ export default function ReservationsPage() {
                 id="date"
                 name="date"
                 required
+                min={today}
+                max={maxDate}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
               />
             </div>
+
+            {/* Hora */}
             <div>
               <label
-                className="block text-left font-medium mb-2"
                 htmlFor="time"
+                className="block text-left font-medium mb-2"
               >
                 Hora da Reserva
               </label>
@@ -122,6 +146,35 @@ export default function ReservationsPage() {
                 name="time"
                 required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
+                onChange={(e) => {
+                  const dateInput = document.getElementById("date").value;
+                  if (!dateInput) return;
+                  const day = new Date(dateInput).getDay(); // 0=Dom, 1=Seg, ..., 6=Sáb
+                  const time = e.target.value;
+
+                  const horarios = {
+                    0: ["12:00", "21:30"], // Domingo
+                    1: null, // Segunda fechado
+                    2: ["17:00", "21:30"], // Terça
+                    3: ["17:00", "21:30"], // Quarta
+                    4: ["17:00", "21:30"], // Quinta
+                    5: ["17:00", "23:00"], // Sexta
+                    6: ["17:00", "23:00"], // Sábado
+                  };
+
+                  if (!horarios[day]) {
+                    alert("Estamos fechados neste dia. Escolha outra data.");
+                    e.target.value = "";
+                    return;
+                  }
+
+                  if (time < horarios[day][0] || time > horarios[day][1]) {
+                    alert(
+                      `O horário disponível neste dia é entre ${horarios[day][0]} e ${horarios[day][1]}`
+                    );
+                    e.target.value = "";
+                  }
+                }}
               />
             </div>
           </div>
@@ -129,8 +182,8 @@ export default function ReservationsPage() {
           {/* Número de pessoas */}
           <div>
             <label
-              className="block text-left font-medium mb-2"
               htmlFor="guests"
+              className="block text-left font-medium mb-2"
             >
               Número de pessoas
             </label>
@@ -138,9 +191,10 @@ export default function ReservationsPage() {
               type="number"
               id="guests"
               name="guests"
-              min="1"
-              max="20"
               required
+              min="1"
+              max="10"
+              title="O número máximo de pessoas é 10"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             />
           </div>
@@ -148,8 +202,8 @@ export default function ReservationsPage() {
           {/* Mensagem opcional */}
           <div>
             <label
-              className="block text-left font-medium mb-2"
               htmlFor="message"
+              className="block text-left font-medium mb-2"
             >
               Mensagem adicional (opcional)
             </label>
@@ -157,6 +211,7 @@ export default function ReservationsPage() {
               id="message"
               name="message"
               rows="4"
+              placeholder="Alguma observação para a reserva..."
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none"
             ></textarea>
           </div>
@@ -175,7 +230,8 @@ export default function ReservationsPage() {
           {/* Mensagens de sucesso/erro */}
           {state.succeeded && (
             <p className="text-green-600 mt-4 text-center">
-              Reserva enviada com sucesso! Aguarde nossa confirmação por E-mail dentro de até 5 horas.
+              Reserva enviada com sucesso! Aguarde nossa confirmação por E-mail
+              dentro de até 24 horas.
             </p>
           )}
           {state.errors?.length > 0 && (
@@ -184,6 +240,11 @@ export default function ReservationsPage() {
             </p>
           )}
         </form>
+
+        <p className="mt-2 text-sm md:text-base text-gray-600 font-sans text-center leading-relaxed pt-10 italic">
+          Arrivederci! Até breve!
+        </p>
+
       </main>
 
       <Footer />
