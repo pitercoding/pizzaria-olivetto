@@ -44,7 +44,7 @@ export default function ContactPage() {
             </span>
             <h3 className="text-xl font-semibold mb-2">E-mail</h3>
             <p>Escreva para nós</p>
-            <p className="font-bold">info@pizzariaolivetto.com.br</p>
+            <p className="font-bold">pizzariaolivetto@gmail.com</p>
           </div>
           <div className="flex flex-col items-center">
             <span className="text-5xl mb-4">

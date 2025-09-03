@@ -23,10 +23,15 @@ export default function Menu() {
         Menu
       </h2>
 
-      {/* Botão */}
-      <button className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 z-10 relative font-sans">
+      {/* Botão/link para PDF */}
+      <a
+        href="/menu.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 z-10 relative font-sans"
+      >
         Acesse agora
-      </button>
+      </a>
     </section>
   );
 }
