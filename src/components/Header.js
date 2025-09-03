@@ -10,7 +10,7 @@ export default function Header() {
   const menuLinks = [
     { href: "/", label: "Início" },
     { href: "/gallery", label: "Galeria" },
-    { href: "#menu", label: "Menu" },
+    { href: "/menu.pdf", label: "Menu", isPdf: true },
     { href: "#bebidas", label: "Bebidas" },
     { href: "/contact", label: "Contato" },
   ];
@@ -25,15 +25,27 @@ export default function Header() {
 
         {/* Menu desktop */}
         <nav className="space-x-6 hidden md:flex font-sans-footer">
-          {menuLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-black hover:translate-x-1 transition-transform duration-200"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {menuLinks.map((link) =>
+            link.isPdf ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:translate-x-1 transition-transform duration-200"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-black hover:translate-x-1 transition-transform duration-200"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Social icons + Hamburger */}
@@ -86,15 +98,27 @@ export default function Header() {
       {/* Menu mobile */}
       {isOpen && (
         <nav className="flex flex-col space-y-2 p-4 bg-white md:hidden overflow-hidden font-sans-footer">
-          {menuLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-black hover:translate-x-2 transition-transform duration-200"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {menuLinks.map((link) =>
+            link.isPdf ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:translate-x-2 transition-transform duration-200"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-black hover:translate-x-2 transition-transform duration-200"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
       )}
     </header>
