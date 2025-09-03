@@ -31,7 +31,7 @@ export const metadata = {
     siteName: "Pizzaria Olivetto",
     images: [
       {
-        url: "/og-image.jpg", // coloque uma imagem 1200x630px em /public/
+        url: "/og-image.jpg", // Adicionar uma imagem 1200x630px em /public/
         width: 1200,
         height: 630,
         alt: "Pizza artesanal da Pizzaria Olivetto",
