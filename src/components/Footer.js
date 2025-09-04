@@ -18,23 +18,29 @@ export default function Footer() {
 
         {/* Coluna 2 - Links rápidos */}
         <div>
-          <h3 className="text-[18px] font-sans font-bold mb-2">Links Rápidos</h3>
+          <h3 className="text-[18px] font-sans font-bold mb-2">
+            Links Rápidos
+          </h3>
           <ul className="text-[14px] space-y-1 font-sans">
             <li>
-              <a href="#menu">Menu</a>
+              <a href="/menu.pdf" target="_blank" rel="noopener noreferrer">
+                Menu
+              </a>
             </li>
             <li>
-              <a href="#bebidas">Bebidas</a>
+              <a href="/bebidas.pdf" target="_blank" rel="noopener noreferrer">Bebidas</a>
             </li>
             <li>
-              <a href="#contato">Contato</a>
+              <a href="/contact">Contato</a>
             </li>
           </ul>
         </div>
 
         {/* Coluna 3 - Redes sociais */}
         <div>
-          <h3 className="text-[18px] font-sans font-bold mb-2">Redes Sociais</h3>
+          <h3 className="text-[18px] font-sans font-bold mb-2">
+            Redes Sociais
+          </h3>
           <div className="flex space-x-4 text-2xl font-sans-footer">
             <a
               href="https://www.instagram.com/"

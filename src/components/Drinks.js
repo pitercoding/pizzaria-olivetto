@@ -16,10 +16,17 @@ export default function Drinks() {
       <div className="absolute inset-0 bg-black/40 -z-10"></div>
 
       {/* Conteúdo */}
+      {/* Título */}
       <h2 className="text-[90px] font-serif font-bold mb-6">Bebidas</h2>
-      <button className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 font-sans">
+
+      {/* Botão/link para PDF */}
+      <a 
+      href="/bebidas.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-transparent border border-white text-white py-3 px-6 rounded-xl font-bold hover:scale-105 transition-transform duration-300 font-sans">
         Descubra agora
-      </button>
+      </a>
     </section>
   );
 }
