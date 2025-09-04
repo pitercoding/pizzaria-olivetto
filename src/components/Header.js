@@ -11,7 +11,7 @@ export default function Header() {
     { href: "/", label: "Início" },
     { href: "/gallery", label: "Galeria" },
     { href: "/menu.pdf", label: "Menu", isPdf: true },
-    { href: "#bebidas", label: "Bebidas" },
+    { href: "/bebidas.pdf", label: "Bebidas", isPdf: true },
     { href: "/contact", label: "Contato" },
   ];
 
