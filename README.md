@@ -182,7 +182,7 @@ O site foi publicado na Vercel:
 
 Deploy é automático a cada `git push` para a branch principal.
 
-## Conclusão
+## 📌 Conclusão
 
 Esse projeto foi um **marco no meu aprendizado**. Não foi apenas sobre escrever código, mas também sobre **tomar decisões de design, pensar na experiência do cliente, estruturar regras de negócio e usar ferramentas novas**.
 
@@ -196,11 +196,13 @@ O resultado é um **site elegante, funcional e responsivo**, que serviu como **l
 ## 🤝 Contribuições
 
 Este projeto está **aberto para contribuições**!  
+
 Se você também está aprendendo ou quer ajudar com **ideias e melhorias**, sinta-se à vontade para abrir um **Pull Request** ou **Issue**.
 
 ## 👨‍💻 Autor
 
 Projeto desenvolvido por um **estudante de CiÇencias da Compuração** com fins educacionais e de aprendizado pessoal.  
+
 Se quiser trocar ideia ou colaborar, é só chamar!
 
 ## 📄 Licença
