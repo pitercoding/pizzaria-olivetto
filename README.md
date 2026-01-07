@@ -1,4 +1,10 @@
-# 🍕 Pizzaria Olivetto
+<h1 align="center">🍕 Pizzaria Olivetto (PT-BR)</h1>
+
+<p align="center">
+  🌎 <strong>Languages:</strong><br>
+  <a href="README.md">🇧🇷 Português</a> |
+  <a href="README.en.md">🇺🇸 English</a>
+</p>
 
 Este é um projeto pessoal desenvolvido para **portfólio**.
 
@@ -199,14 +205,14 @@ Este projeto está **aberto para contribuições**!
 
 Se você também está aprendendo ou quer ajudar com **ideias e melhorias**, sinta-se à vontade para abrir um **Pull Request** ou **Issue**.
 
-## 👨‍💻 Autor
+## 📜 **Licença**
 
-Projeto desenvolvido por um **estudante de CiÇencias da Compuração** com fins educacionais e de aprendizado pessoal.  
+Este projeto está sob a licença **MIT**.
 
-Se quiser trocar ideia ou colaborar, é só chamar!
+## 🧑‍💻 Autor
 
-## 📄 Licença
+**Piter Gomes** — Aluno de Ciências da Computação (5º Semestre) & Desenvolvedor Full-Stack
 
-Este projeto está sob a licença **MIT**. Sinta-se livre para usar, modificar e compartilhar.
+📧 [Email](mailto:piterg.bio@gmail.com) | 💼 [LinkedIn](https://www.linkedin.com/in/piter-gomes-4a39281a1/) | 💻 [GitHub](https://github.com/pitercoding) | 🌐 [Portfolio](https://portfolio-pitergomes.vercel.app/)
 
 
